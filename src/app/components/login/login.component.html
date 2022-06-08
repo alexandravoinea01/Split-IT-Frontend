@@ -1,0 +1,33 @@
+
+<div class="login">
+  <div class="login">
+    <form [formGroup]="loginForm">
+      <h1>Login</h1>
+
+      <mat-form-field class="details">
+        <input matInput
+               formControlName="username"
+               type="text"
+               placeholder="Username"
+        >
+      </mat-form-field>
+
+      <mat-form-field class="details">
+        <input type="password"
+               matInput
+               formControlName="password"
+               placeholder="Password"
+        >
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button
+                color="warn"
+                (click)="submit()"
+        > Login </button>
+      </div>
+    </form>
+    <span (click)="createAccount()">Don't have an account? Register now!</span>
+
+  </div>
+</div>

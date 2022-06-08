@@ -1,0 +1,31 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  border: 8px outset #999;
+  padding: 50px 50px;
+  width: 500px;
+  margin: 10% auto;
+}
+.details {
+  padding-top: 20px;
+}
+
+.details label {
+  padding-right: 10px;
+}
+
+button {
+  margin-top: 30px;
+  width: 100px;
+  background-color: black;
+  color: white;
+}
+
+span {
+  :hover {
+    color: blue;
+    text-decoration: underline;
+  }
+}

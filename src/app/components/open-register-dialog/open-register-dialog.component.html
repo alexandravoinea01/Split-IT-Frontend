@@ -1,0 +1,30 @@
+
+<div class="login">
+  <form [formGroup]="registerForm">
+    <h1>Register</h1>
+
+    <mat-form-field class="details">
+      <input matInput
+             formControlName="username"
+             type="text"
+             placeholder="Username"
+      >
+    </mat-form-field>
+
+    <mat-form-field class="details">
+      <input type="password"
+             matInput
+             formControlName="password"
+             placeholder="Password"
+      >
+    </mat-form-field>
+
+    <div>
+      <button mat-raised-button
+              color="warn"
+              (click)="register()"
+      > Register </button>
+    </div>
+  </form>
+
+</div>
