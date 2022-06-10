@@ -1,3 +1,18 @@
+h1 {
+  color: black;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: teal;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -6,7 +21,8 @@ form {
   border: 8px outset #999;
   padding: 50px 50px;
   width: 500px;
-  margin: 10% auto;
+  margin: 75px auto;
+  background-color: white;
 }
 .details {
   padding-top: 20px;
@@ -29,3 +45,4 @@ span {
     text-decoration: underline;
   }
 }
+

@@ -1,8 +1,9 @@
+<div class="container">
+  <h1>Welcome to Split-IT!</h1>
 
-<div class="login">
   <div class="login">
     <form [formGroup]="loginForm">
-      <h1>Login</h1>
+      <h1>Sign in to your account</h1>
 
       <mat-form-field class="details">
         <input matInput
@@ -22,12 +23,13 @@
 
       <div>
         <button mat-raised-button
-                color="warn"
+                color="accent"
                 (click)="submit()"
         > Login </button>
       </div>
+      <span (click)="createAccount()">Don't have an account? Register now!</span>
+
     </form>
-    <span (click)="createAccount()">Don't have an account? Register now!</span>
 
   </div>
 </div>
