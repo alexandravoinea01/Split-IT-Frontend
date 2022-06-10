@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Welcome to Split-IT!</h1>
+  <h1 class="gradient">Welcome to Split-IT!</h1>
 
   <div class="login">
     <form [formGroup]="loginForm">
@@ -23,9 +23,9 @@
 
       <div>
         <button mat-raised-button
-                color="accent"
+                color="primary"
                 (click)="submit()"
-        > Login </button>
+        > Sign In </button>
       </div>
       <span (click)="createAccount()">Don't have an account? Register now!</span>
 

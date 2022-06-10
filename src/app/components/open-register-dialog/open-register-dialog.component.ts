@@ -40,4 +40,8 @@ export class OpenRegisterDialogComponent implements OnInit {
       this.dialogRef.close(payload);
     }
   }
+
+  cancel() {
+    this.dialogRef.close();
+  }
 }

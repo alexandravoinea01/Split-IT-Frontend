@@ -1,0 +1,17 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 50px 50px;
+}
+
+
+mat-dialog-actions {
+  float: right;
+}
+
+h2 {
+  text-align: center;
+}
