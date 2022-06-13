@@ -1,0 +1,16 @@
+.content-container {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 25px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
