@@ -1,3 +1,37 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
 table {
-  width: 100%;
+  margin: 10% 10%;
+  width: 80%;
+  justify-content: center;
+
+  th {
+    background-color: white;
+    font-weight: 600;
+  }
+
+  th, td {
+    padding: 0;
+    font-size: 13px;
+  }
+}
+
+.mat-header-cell, .mat-cell {
+  padding: 0 15px !important;
+}
+
+img {
+  background-image: url("https://thumbs.dreamstime.com/b/linear-group-icon-customer-service-outline-collection-thin-line-vector-isolated-white-background-138644548.jpg");
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
 }

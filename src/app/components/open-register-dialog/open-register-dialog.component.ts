@@ -33,10 +33,9 @@ export class OpenRegisterDialogComponent implements OnInit {
   register() {
     if (this.registerForm.valid) {
       const payload = {
-        username: this.registerForm.get('username')?.value,
+        email: this.registerForm.get('username')?.value,
         password: this.registerForm.get('password')?.value
       };
-      console.log(payload);
       this.dialogRef.close(payload);
     }
   }

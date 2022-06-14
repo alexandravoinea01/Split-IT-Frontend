@@ -17,6 +17,7 @@ export interface Group {
 export class GroupsComponent implements OnInit{
   diplayedColumns = ['photoUrl', 'name'];
   dataSource = new GroupsDataSource(this.groupsService);
+  defaultImage = "https://thumbs.dreamstime.com/b/linear-group-icon-customer-service-outline-collection-thin-line-vector-isolated-white-background-138644548.jpg";
 
   constructor(
     private groupsService: GroupsService

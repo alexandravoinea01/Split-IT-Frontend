@@ -1,18 +1,20 @@
-<mat-sidenav-container fullscreen>
-  <mat-toolbar color="primary">
-    <button mat-icon-button (click)="start.open()">
-      <mat-icon>menu</mat-icon>
-    </button>
-  </mat-toolbar>
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="start.open()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
 
+<mat-sidenav-container fullscreen>
   <mat-sidenav #start>
-    <mat-nav-list *ngFor="let item of sidenavItems">
-      <a mat-list-item [routerLink]="item.route" routerLinkActive="active">
-        <mat-icon>{{item.iconName}}</mat-icon>
-        <span>{{item.displayName}}</span>
+      <a mat-list-item routerLink="/groups" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <mat-icon>group</mat-icon>
+        <span>My Groups</span>
       </a>
-    </mat-nav-list>
   </mat-sidenav>
 
-  <router-outlet></router-outlet>
+  <mat-sidenav-content>
+    <app-groups></app-groups>
+  </mat-sidenav-content>
+
 </mat-sidenav-container>
+

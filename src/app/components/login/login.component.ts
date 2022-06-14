@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {MatDialog} from '@angular/material/dialog';
 import {OpenRegisterDialogComponent} from "../open-register-dialog/open-register-dialog.component";
+import {AuthService} from "../../services/auth.service";
+import {finalize, switchMap} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -16,7 +19,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,7 +32,14 @@ export class LoginComponent implements OnInit {
   }
 
   private openRegisterDialog() {
-    this.dialog.open(OpenRegisterDialogComponent);
+    this.dialog.open(OpenRegisterDialogComponent)
+      .afterClosed()
+      .pipe(
+        switchMap(res => this.authService.register(res.username, res.password)),
+      )
+      .subscribe(res => {if(res) {
+        this.router.navigate(['/login'])
+      }});
   }
 
   createAccount() {
@@ -37,10 +49,15 @@ export class LoginComponent implements OnInit {
   submit() {
     if (this.loginForm.valid) {
       const payload = {
-        username: this.loginForm.get('username')?.value,
+        email: this.loginForm.get('username')?.value,
         password: this.loginForm.get('password')?.value
       };
-      console.log(payload)
+      this.authService.login(payload.email, payload.password)
+        .subscribe( result => {
+          if (result) {
+            this.router.navigate(['/dashboard']);
+          }
+        });
     }
   }
 }
