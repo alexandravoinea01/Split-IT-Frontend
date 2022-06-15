@@ -8,7 +8,7 @@ import {Group} from "../components/groups/groups.component";
 })
 
 export class GroupsService {
-  private readonly baseUrl = 'api/Group';
+  private readonly baseUrl = 'https://localhost:5001/api/Group';
 
   constructor(
     private http: HttpClient
@@ -17,6 +17,6 @@ export class GroupsService {
 
   getGroups(): Observable<Group[]> {
     // @ts-ignore
-    return this.http.get(`https://localhost:44388/${this.baseUrl}`);
+    return this.http.get(`${this.baseUrl}`);
   }
 }

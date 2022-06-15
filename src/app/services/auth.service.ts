@@ -7,7 +7,7 @@ import {BehaviorSubject, map, tap} from "rxjs";
 })
 
 export class AuthService {
-  private readonly baseUrl = 'https://localhost:44388/api/Authentication';
+  private readonly baseUrl = 'https://localhost:5001/api/Authentication';
   _authNavStatusSource = new BehaviorSubject(false);
   loggedIn = false;
 

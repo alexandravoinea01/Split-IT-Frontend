@@ -52,12 +52,9 @@ export class LoginComponent implements OnInit {
         email: this.loginForm.get('username')?.value,
         password: this.loginForm.get('password')?.value
       };
+      this.router.navigate(['/dashboard']);
       this.authService.login(payload.email, payload.password)
-        .subscribe( result => {
-          if (result) {
-            this.router.navigate(['/dashboard']);
-          }
-        });
+        .subscribe();
     }
   }
 }
